@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<YOUR_SHA_INTEGRITY>" crossorigin="anonymous" />
+    <!-- Bootstrap CSS (if using) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Other CSS or custom styles -->
+    <style>
+        /* Custom styles can be added here */
+    </style>
+</head>
+<body>
+    <!-- Your contact section HTML -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h1 class="section-header">Get in <span class="content-header wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">Touch with us</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="add_margin">
+                        <address>
+                            <strong>Office Address</strong><br>
+                            H.No:1-2-45/1, Gachibowli <br>
+                            DLF Road, Near Tata Consultancy Limited, Hyderabad-500 014<br>
+                            Teangana, India. <br>
+                            <i class="fa fa-phone" aria-hidden="true"></i> : <a href="tel:+91-22-259064991"> 040-222444 </a>
+                        </address>
+                        
+                        <address>
+                            <strong>For Support </strong><br>
+                            Ms.Dontha Nikhitha <br>
+                            <i class="fa fa-phone" aria-hidden="true"></i> : <a href="tel:+91 9372 7208 81">+91 9372 7208 81</a><br>
+                            <br>
+                            <strong>For Enquiry </strong><br>
+                            Ms.Shilpa Shetti <br>       
+                            <i class="fa fa-phone" aria-hidden="true"></i> : <a href="tel:1800-2121-811">1800-2121-811 </a> <br>
+                        
+                        </address>
+                    </div>
+                    <div class="add_margin">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.928613632429!2d78.335799214899!3d17.44755860354438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccb98e3e61eb5f%3A0xb16533f3b7a8f1c7!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1695919642322!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-section">
+                        <form id="contact-form" name="contact_us_frm" method="post" action="index.php#contact" role="form" onSubmit="return ValidateForm();">
+                            <div id="duplicate_data"></div>
+                            <div id="success_data"></div>
+                            <div id="form_data">
+                                <div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername">Your name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="subscriber_name" id="subscriber_name" onkeyup="Validate_txt(this)" placeholder="Enter Name" data-error="Enter Name." maxlength="150" value="">
+                                        <div id="subscriber_name_error" style="color:red"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail">Email Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="contact_email" id="contact_email" placeholder="Enter Email Address" data-error="Enter Email Address" maxlength="150" value="">
+                                        <div id="email_id_error" style="color:red"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telephone">Mobile No. <span class="text-danger">*</span></label>
+                                        <div>
+                                            <input type="text" class="form-control width10" name="country_code" id="country_code" onkeyup="Validate_number(this)" placeholder="Enter Country Code" data-error="Enter Country Code" maxlength="3" value="91">
+                                            <input type="text" class="form-control width90" name="contact_telephone" id="contact_telephone" onkeyup="Validate_number(this)" placeholder="Enter Mobile No." data-error="Enter Mobile No." maxlength="10" value="">
+                                        </div>
+                                        <div id="mobile_no_error" style="color:red"></div>
+                                        <div id="country_code_error" style="color:red"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telephone">Company Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="company_name" id="company_name" onkeyup="Validate_company_txt(this)" placeholder="Company Name" data-error="Company Name." maxlength="50" value="">
+                                        <div id="company_name_error" style="color:red"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="inputName">Company Type<span class="text-danger">*</span></label>
+                                        <div>
+                                            <select name="company_type" id="company_type" class="form-control">
+                                                <option value="">Select Company Type</option>
+                                                <option value='2'>Limited Company </option>
+                                                <option value='6'>Others </option>
+                                                <option value='4'>Partnership </option>
+                                                <option value='1'>Private Limited Company </option>
+                                                <option value='5'>Society </option>
+                                            </select>
+                                            <div id="company_type_error" style="color:red"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="inquiry" value="sales_inquiry" checked='checked'> Sales Inquiry
+                                        <input type="radio" name="inquiry" value="support_inquiry"> Support Inquiry
+                                        <div id="inquiry_error" style="color:red"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Message</label>
+                                        <textarea class="form-control" name="contact_description" id="contact_description" placeholder="Enter Your Message"></textarea>
+                                        <div id="contact_description_error" style="color:red"></div>
+                                    </div>
+                                    <div>
+                                        <div class="g-recaptcha" data-sitekey="6LfeiBcUAAAAANHyCvCFiFhk2ixUivxVKElSU7Fv"></div>
+                                        <div id="captcha_error" style="color:red"></div>
+                                    </div>
+                                    <div>
+                                        <input type="hidden" name="utm_source" id="utm_source" value="Direct">
+                                        <input type="hidden" name="utm_medium" id="utm_medium" value="">
+                                        <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+                                        <input type="submit" name="contact_submit" id="contact_submit" style="margin-top:10px;" class="btn btn-warning" value="Submit">
+                                        <span id="loading"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap JS (if using) and other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9"></script>
+    <footer class="footer-2 py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    &copy; 2024 Smart Ballot | Smart Ballot is a product of Eko Internet Marketing, LLC.
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="/terms-of-service" class="footer-link">Terms of Service</a> | <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts and additional content -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Smart Ballot</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://smartballot.com" class="footer-link">Home</a></li>
+                        <li><a href="https://smartballot.com/pricing" class="footer-link">Pricing</a></li>
+                        <li><a href="https://smartballot.com/reviews" class="footer-link">Reviews</a></li>
+                        <li><a href="https://smartballot.com/contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://smartballot.com/support" class="footer-link">Support Center</a></li>
+                        <li><a href="https://smartballot.com/support" class="footer-link">Knowledge Base</a></li>
+                        <li><a href="https://smartballot.com/support/ticket" class="footer-link">New Support Ticket</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Social</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                        <li><a href="#" class="footer-link">Twitter</a></li>
+                        <li><a href="#" class="footer-link">Instagram</a></li>
+                        <li><a href="#" class="footer-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <footer class="footer-2 py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    &copy; 2024 Smart Ballot | Smart Ballot is a product of Eko Internet Marketing, LLC.
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="/terms-of-service" class="footer-link">Terms of Service</a> | <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    

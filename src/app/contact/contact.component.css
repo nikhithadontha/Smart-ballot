@@ -1,0 +1,74 @@
+/* Add this CSS to style the contact section and background */
+
+#contact {
+    padding: 60px 0;
+}
+
+#contact .bg-light {
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+.section-heading {
+    margin-bottom: 60px; /* Spacing below section heading */
+}
+
+.section-header {
+    color: #333; /* Dark text color for section header */
+}
+
+.contact-section {
+    background-color: #fff; /* White background for contact form section */
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+.contact-section form {
+    margin-bottom: 0; /* Remove margin below form */
+}
+
+.add_margin {
+    margin-bottom: 30px; /* Add spacing between address and map */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Spacing between form elements */
+}
+
+textarea.form-control {
+    height: 150px; /* Adjust height of textarea */
+}
+
+.g-recaptcha {
+    margin-bottom: 20px; /* Spacing below reCAPTCHA */
+}
+
+/* Custom CSS for attractive footer styling */
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.footer .footer-link {
+    color: #ffffff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-link:hover {
+    color: #f8f9fa; /* Hover color */
+}
+
+.footer-2 {
+    background-color: #212529; /* Darker background color for second footer */
+    color: #ffffff; /* Light text color */
+}
+
+.footer-2 .footer-link {
+    color: #ffffff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-2 .footer-link:hover {
+    color: #f8f9fa; /* Hover color */
+}

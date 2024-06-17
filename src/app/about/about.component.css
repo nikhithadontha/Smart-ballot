@@ -1,0 +1,30 @@
+/* Custom CSS for attractive footer styling */
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.footer .footer-link {
+    color: #ffffff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-link:hover {
+    color: #f8f9fa; /* Hover color */
+}
+
+.footer-2 {
+    background-color: #212529; /* Darker background color for second footer */
+    color: #ffffff; /* Light text color */
+}
+
+.footer-2 .footer-link {
+    color: #ffffff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-2 .footer-link:hover {
+    color: #f8f9fa; /* Hover color */
+}

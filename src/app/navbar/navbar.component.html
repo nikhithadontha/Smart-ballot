@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="container">
+    <a routerLink="/" class="logo">Smart Ballot</a>
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
+      <li><a routerLink="/vote" (click)="toggleMenu()">Vote Now</a></li>
+      <li><a routerLink="/results" (click)="toggleMenu()">Results</a></li>
+      <li><a routerLink="/about" (click)="toggleMenu()">About</a></li>
+      <li><a routerLink="/login" (click)="toggleMenu()"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+     <li><a routerLink="/logout" (click)="toggleMenu()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+      <li><a routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
+    </ul>
+    <div class="burger" (click)="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </div>
+</nav>
