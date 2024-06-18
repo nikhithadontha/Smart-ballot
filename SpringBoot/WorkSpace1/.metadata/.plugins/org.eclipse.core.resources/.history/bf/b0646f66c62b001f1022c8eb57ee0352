@@ -1,0 +1,48 @@
+package com.ts;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.ResponseEntity;
+
+import com.model.Election;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class Project1ApplicationTests {
+
+    @LocalServerPort
+    private int port;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    void contextLoads() {
+        // Basic test to ensure that the Spring context loads successfully
+    }
+
+    @Test
+    void testAddElectionEndpoint() {
+        Election election = new Election();
+        election.setElectionName("Example Election");
+        election.setElectionDate(LocalDate.now());
+
+        ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + port + "/election/addElection", election, String.class);
+        assertThat(response.getStatusCodeValue()).isEqualTo(200);
+        assertThat(response.getBody()).contains("Election added successfully");
+    }
+
+    @Test
+    void testGetAllElectionsEndpoint() {
+        ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:" + port + "/election/getAllElections", String.class);
+        assertThat(response.getStatusCodeValue()).isEqualTo(200);
+        // Add more assertions based on your API response
+    }
+
+    // Add more test methods for other endpoints or functionality as needed
+
+}

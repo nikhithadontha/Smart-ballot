@@ -1,0 +1,5 @@
+package exceptiom;
+
+public class ResourceNotFoundException {
+
+}

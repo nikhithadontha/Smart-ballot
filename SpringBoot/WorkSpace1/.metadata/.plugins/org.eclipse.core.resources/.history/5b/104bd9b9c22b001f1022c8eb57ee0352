@@ -1,0 +1,22 @@
+package com.dao;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import com.model.Election;
+
+public interface ElectionDao {
+
+    void addElection(Election election);
+
+    List<Election> getAllElections();
+
+    Optional<Election> getElectionById(Long electionId);
+
+    List<Election> getElectionByName(String electionName);
+
+    List<Election> getElectionByDate(LocalDate electionDate);
+
+    void deleteElectionById(Long electionId);
+}

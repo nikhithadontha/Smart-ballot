@@ -1,0 +1,26 @@
+//package com.ts;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class Project1ApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}
+package com.ts;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Project1ApplicationTests {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Project1ApplicationTests.class, args);
+	}
+
+}

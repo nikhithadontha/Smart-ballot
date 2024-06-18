@@ -1,0 +1,61 @@
+package com.dao;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Repository;
+
+import com.dao.ElectionDao;
+import com.model.Election;
+
+@Repository
+public class ElectionDaoImpl implements ElectionDao {
+
+    private List<Election> elections = new ArrayList<>();
+
+    @Override
+    public void addElection(Election election) {
+        elections.add(election);
+    }
+
+    @Override
+    public List<Election> getAllElections() {
+        return elections;
+    }
+
+    @Override
+    public Optional<Election> getElectionById(Long electionId) {
+        return elections.stream()
+                .filter(election -> election.getId().equals(electionId))
+                .findFirst();
+    }
+
+    @Override
+    public List<Election> getElectionByName(String electionName) {
+        List<Election> result = new ArrayList<>();
+        for (Election election : elections) {
+            if (election.getName().equalsIgnoreCase(electionName)) {
+                result.add(election);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public List<Election> getElectionByDate(LocalDate electionDate) {
+        List<Election> result = new ArrayList<>();
+        for (Election election : elections) {
+            if (election.getDate().equals(electionDate)) {
+                result.add(election);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public void deleteElectionById(Long electionId) {
+        elections.removeIf(election -> election.getId().equals(electionId));
+    }
+}

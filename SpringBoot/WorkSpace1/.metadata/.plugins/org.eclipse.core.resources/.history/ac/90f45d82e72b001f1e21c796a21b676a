@@ -1,0 +1,10 @@
+package com.ts.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class AuthService {
+
+    // Implementation of authentication service methods can go here
+
+}

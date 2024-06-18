@@ -1,0 +1,49 @@
+package com.service.impl;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dao.ElectionDao;
+import com.model.Election;
+import com.service.ElectionService;
+
+@Service
+public class ElectionServiceImpl implements ElectionService {
+
+    @Autowired
+    private ElectionDao electionDao;
+
+    @Override
+    public void addElection(Election election) {
+        electionDao.addElection(election);
+    }
+
+    @Override
+    public List<Election> getAllElections() {
+        return electionDao.getAllElections();
+    }
+
+    @Override
+    public Optional<Election> getElectionById(Long electionId) {
+        return electionDao.getElectionById(electionId);
+    }
+
+    @Override
+    public List<Election> getElectionByName(String electionName) {
+        return electionDao.getElectionByName(electionName);
+    }
+
+    @Override
+    public List<Election> getElectionByDate(LocalDate electionDate) {
+        return electionDao.getElectionByDate(electionDate);
+    }
+
+    @Override
+    public void deleteElectionById(Long electionId) {
+        electionDao.deleteElectionById(electionId);
+    }
+}

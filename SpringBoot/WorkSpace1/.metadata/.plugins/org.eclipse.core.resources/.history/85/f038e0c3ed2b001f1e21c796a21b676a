@@ -1,0 +1,23 @@
+// Example code snippet to enforce password complexity in your Spring Boot backend
+@PostMapping("/login")
+public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+    // Validate username and password
+    if (!isValidUsername(loginRequest.getUsername())) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username.");
+    }
+    
+    // Implement password complexity validation
+    if (!isValidPassword(loginRequest.getPassword())) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Password must meet complexity requirements.");
+    }
+    
+    // Proceed with login logic
+    // ...
+}
+
+private boolean isValidPassword(String password) {
+    // Implement your password complexity rules here
+    // Example: Password must contain at least one uppercase, one lowercase, one number, and one special character
+    String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
+    return password.matches(passwordRegex);
+}
